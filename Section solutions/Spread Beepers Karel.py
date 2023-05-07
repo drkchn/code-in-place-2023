@@ -36,17 +36,20 @@ def main():
     turn_around()
 
 
+# Resets Karel's position so she goes back to her starting position (face east at the left most column)
 def reset_Karel():
     while front_is_clear():
         move()
     turn_around()
 
 
+# Turns Karel 180 degrees
 def turn_around():
     for i in range(2):
         turn_left()
 
 
+# Karel places a beeper at the end of the row, then we call the reset_Karel() helper function
 def beeper_end_of_row():
     put_beeper()
     turn_around()
@@ -54,6 +57,7 @@ def beeper_end_of_row():
     move()
 
 
+# The last beeper in the stack of beepers, so we don't go to the end of the row. Karel immediately turns around and goes back to her starting position.
 def last_beeper():
     put_beeper()
     turn_around()
